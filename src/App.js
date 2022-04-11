@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Footer from './components/footer/Footer';
+import NavInshorts from "./components/NavInshorts";
+import NewsContent from './newsContent/NewsContent';
+
 
 function App() {
+
+  const [category, setCategory] = useState("general");
+  const [newsArray, setNewsArray] = useState([]);
+  const [newsResults, setNewsResults] = useState();
+  // const [loadmore, setLoadmore] = useState(20)
+
+  const newsApi = async () => {
+    try {
+      const news = await axios.get(`https://saurav.tech/NewsAPI/top-headlines/category/${category}/in.json`)
+      setNewsArray(news.data.articles);
+      setNewsResults(news.data.totalResults);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  console.log(newsArray);
+  useEffect(() => {
+    newsApi();
+  }, [newsResults, category])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavInshorts setCategory={setCategory} />
+      <NewsContent newsArray={newsArray} newsResults={newsResults} />
+      <Footer />
     </div>
   );
 }
