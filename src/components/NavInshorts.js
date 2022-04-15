@@ -9,7 +9,7 @@ const NavInshorts = ({ setCategory }) => {
             <div className="icon">
                 <HamburgerDrawer setCategory={setCategory} />
             </div>
-            <a href='/' className='home'>
+            <a href='https://vikash2.github.io/inshorts-clone/' className='home'>
                 <img src="https://assets.inshorts.com/website_assets/images/logo_inshorts.png"
                     height="80%" alt='logo'
                     style={{ cursor: "pointer" }} />
