@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/inshorts-clone/static/css/main.2f656e81.css",
-    "main.js": "/inshorts-clone/static/js/main.ab6e5978.js",
+    "main.js": "/inshorts-clone/static/js/main.010a689a.js",
     "index.html": "/inshorts-clone/index.html",
     "main.2f656e81.css.map": "/inshorts-clone/static/css/main.2f656e81.css.map",
-    "main.ab6e5978.js.map": "/inshorts-clone/static/js/main.ab6e5978.js.map"
+    "main.010a689a.js.map": "/inshorts-clone/static/js/main.010a689a.js.map"
   },
   "entrypoints": [
     "static/css/main.2f656e81.css",
-    "static/js/main.ab6e5978.js"
+    "static/js/main.010a689a.js"
   ]
 }
